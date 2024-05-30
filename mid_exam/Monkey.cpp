@@ -1,52 +1,26 @@
-//  #include <bits/stdc++.h>
-// using namespace std;
-
-// int main()
-// {
-
-//     string line;
-//     while (getline(cin, line))
-//     {
-//         string result;
-//         for (char c = 'a'; c <= 'z'; ++c)
-//         {
-//             for (char ch : line)
-//             {
-//                 if (ch == c)
-//                 {
-//                     result += ch;
-//                 }
-//             }
-//         }
-//         cout << result << endl;
-//     }
-//     return 0;
-// }
-
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    string line;
-    while (getline(cin, line))
+    int MAX_SIZE = 100000 + 5;
+    char a[MAX_SIZE];
+
+    while (cin.getline(a, MAX_SIZE))
     {
-        map<char, int> freq;
-        for (char ch : line)
+        int len = strlen(a);
+
+        sort(a, a + len);
+
+        for (int i = 0; i < len; ++i)
         {
-            freq[ch]++;
-        }
-        string result;
-        for (char c = 'a'; c <= 'z'; ++c)
-        {
-            if (freq.count(c))
+            if (a[i] != ' ')
             {
-                result += string(freq[c], c);
+                cout << a[i];
             }
         }
-        cout << result << endl;
+        cout << endl;
     }
+
     return 0;
 }
